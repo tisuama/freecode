@@ -9,12 +9,54 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AboutRouteImport } from './routes/about'
+import { Route as UsageRecordsRouteImport } from './routes/usage-records'
+import { Route as SubscriptionsRouteImport } from './routes/subscriptions'
+import { Route as SubscriptionRechargeRouteImport } from './routes/subscription-recharge'
+import { Route as RedeemCodeRouteImport } from './routes/redeem-code'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as OrdersRouteImport } from './routes/orders'
+import { Route as ModelPlazaRouteImport } from './routes/model-plaza'
+import { Route as ApiKeysRouteImport } from './routes/api-keys'
 import { Route as IndexRouteImport } from './routes/index'
 
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const UsageRecordsRoute = UsageRecordsRouteImport.update({
+  id: '/usage-records',
+  path: '/usage-records',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SubscriptionsRoute = SubscriptionsRouteImport.update({
+  id: '/subscriptions',
+  path: '/subscriptions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SubscriptionRechargeRoute = SubscriptionRechargeRouteImport.update({
+  id: '/subscription-recharge',
+  path: '/subscription-recharge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RedeemCodeRoute = RedeemCodeRouteImport.update({
+  id: '/redeem-code',
+  path: '/redeem-code',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrdersRoute = OrdersRouteImport.update({
+  id: '/orders',
+  path: '/orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ModelPlazaRoute = ModelPlazaRouteImport.update({
+  id: '/model-plaza',
+  path: '/model-plaza',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiKeysRoute = ApiKeysRouteImport.update({
+  id: '/api-keys',
+  path: '/api-keys',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,37 +67,142 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/api-keys': typeof ApiKeysRoute
+  '/model-plaza': typeof ModelPlazaRoute
+  '/orders': typeof OrdersRoute
+  '/profile': typeof ProfileRoute
+  '/redeem-code': typeof RedeemCodeRoute
+  '/subscription-recharge': typeof SubscriptionRechargeRoute
+  '/subscriptions': typeof SubscriptionsRoute
+  '/usage-records': typeof UsageRecordsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/api-keys': typeof ApiKeysRoute
+  '/model-plaza': typeof ModelPlazaRoute
+  '/orders': typeof OrdersRoute
+  '/profile': typeof ProfileRoute
+  '/redeem-code': typeof RedeemCodeRoute
+  '/subscription-recharge': typeof SubscriptionRechargeRoute
+  '/subscriptions': typeof SubscriptionsRoute
+  '/usage-records': typeof UsageRecordsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/api-keys': typeof ApiKeysRoute
+  '/model-plaza': typeof ModelPlazaRoute
+  '/orders': typeof OrdersRoute
+  '/profile': typeof ProfileRoute
+  '/redeem-code': typeof RedeemCodeRoute
+  '/subscription-recharge': typeof SubscriptionRechargeRoute
+  '/subscriptions': typeof SubscriptionsRoute
+  '/usage-records': typeof UsageRecordsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths:
+    | '/'
+    | '/api-keys'
+    | '/model-plaza'
+    | '/orders'
+    | '/profile'
+    | '/redeem-code'
+    | '/subscription-recharge'
+    | '/subscriptions'
+    | '/usage-records'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about'
+  to:
+    | '/'
+    | '/api-keys'
+    | '/model-plaza'
+    | '/orders'
+    | '/profile'
+    | '/redeem-code'
+    | '/subscription-recharge'
+    | '/subscriptions'
+    | '/usage-records'
+  id:
+    | '__root__'
+    | '/'
+    | '/api-keys'
+    | '/model-plaza'
+    | '/orders'
+    | '/profile'
+    | '/redeem-code'
+    | '/subscription-recharge'
+    | '/subscriptions'
+    | '/usage-records'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
+  ApiKeysRoute: typeof ApiKeysRoute
+  ModelPlazaRoute: typeof ModelPlazaRoute
+  OrdersRoute: typeof OrdersRoute
+  ProfileRoute: typeof ProfileRoute
+  RedeemCodeRoute: typeof RedeemCodeRoute
+  SubscriptionRechargeRoute: typeof SubscriptionRechargeRoute
+  SubscriptionsRoute: typeof SubscriptionsRoute
+  UsageRecordsRoute: typeof UsageRecordsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+    '/usage-records': {
+      id: '/usage-records'
+      path: '/usage-records'
+      fullPath: '/usage-records'
+      preLoaderRoute: typeof UsageRecordsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/subscriptions': {
+      id: '/subscriptions'
+      path: '/subscriptions'
+      fullPath: '/subscriptions'
+      preLoaderRoute: typeof SubscriptionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/subscription-recharge': {
+      id: '/subscription-recharge'
+      path: '/subscription-recharge'
+      fullPath: '/subscription-recharge'
+      preLoaderRoute: typeof SubscriptionRechargeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/redeem-code': {
+      id: '/redeem-code'
+      path: '/redeem-code'
+      fullPath: '/redeem-code'
+      preLoaderRoute: typeof RedeemCodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orders': {
+      id: '/orders'
+      path: '/orders'
+      fullPath: '/orders'
+      preLoaderRoute: typeof OrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/model-plaza': {
+      id: '/model-plaza'
+      path: '/model-plaza'
+      fullPath: '/model-plaza'
+      preLoaderRoute: typeof ModelPlazaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api-keys': {
+      id: '/api-keys'
+      path: '/api-keys'
+      fullPath: '/api-keys'
+      preLoaderRoute: typeof ApiKeysRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,8 +217,24 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
+  ApiKeysRoute: ApiKeysRoute,
+  ModelPlazaRoute: ModelPlazaRoute,
+  OrdersRoute: OrdersRoute,
+  ProfileRoute: ProfileRoute,
+  RedeemCodeRoute: RedeemCodeRoute,
+  SubscriptionRechargeRoute: SubscriptionRechargeRoute,
+  SubscriptionsRoute: SubscriptionsRoute,
+  UsageRecordsRoute: UsageRecordsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
